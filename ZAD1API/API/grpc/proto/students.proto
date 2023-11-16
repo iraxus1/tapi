@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+service StudentService {
+    rpc GetStudent(GetStudentRequest) returns (GetStudentResponse);
+    rpc GetStudents(GetStudentsRequest) returns (GetStudentsResponse);
+}
+
+message GetStudentRequest {
+    int32 id = 1;
+    string name = 2;
+    string surname = 3;
+    string email = 4;
+}
+
+message GetStudentResponse {
+    int32 id = 1;
+    string name = 2;
+    string surname = 3;
+    string email = 4;
+}
+
+message GetStudentsRequest {
+}
+
+message GetStudentsResponse {
+    repeated Student students = 1;
+}

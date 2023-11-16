@@ -9,9 +9,13 @@
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "srv": "nodemon server/index.js",
     "srvGraph": "nodemon graphql/index.js",
+    "srvGrpc": "nodemon grpc/index.js",
     "preview": "vite preview"
   },
   "dependencies": {
+    "@gr-code/js-utils": "^1.0.2",
+    "@grpc/grpc-js": "^1.9.9",
+    "@grpc/proto-loader": "^0.7.10",
     "@apollo/server": "^4.9.4",
     "@faker-js/faker": "^8.2.0",
     "cors": "^2.8.5",

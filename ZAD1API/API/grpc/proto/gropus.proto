@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+service GroupService{
+    rpc GetGroup(GroupRequest) returns (GroupResponse);
+    rpc GetGroups(GroupsRequest) returns (GroupsResponse);
+}
+
+message GroupResponse{
+    int32 id = 1;
+    string name = 2;
+    string description = 3;
+}
+
+message GroupRequest{
+    int32 id = 1;
+    string name = 2;
+    string description = 3;
+}
+
+message GroupsResponse{
+    repeated GroupResponse groups = 1;
+}
+
+message GroupsRequest{}

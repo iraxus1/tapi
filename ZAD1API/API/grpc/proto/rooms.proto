@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+service RoomService {
+    rpc GetRoom(RoomRequest) returns (RoomResponse) {}
+    rpc GetRooms(RoomsRequest) returns (RoomsResponse) {}
+}
+
+message RoomResponse {
+    int32 id = 1;
+    string name = 2;
+    string description = 3;
+    int32 capacity = 4;
+}
+
+message RoomRequest {
+    int32 id = 1;
+    string name = 2;
+    string description = 3;
+    int32 capacity = 4;
+}
+
+message RoomsResponse {
+    repeated RoomResponse rooms = 1;
+}
+
+message RoomsRequest {}
