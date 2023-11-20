@@ -5,6 +5,7 @@ import { ApolloServer } from "@apollo/server";
 import { expressMiddleware } from "@apollo/server/express4";
 
 const app = express();
+
 const typeDefs = `#graphql
     type Student {
         id: Int
@@ -71,7 +72,7 @@ const server = new ApolloServer({
 });
 
 await server.start();
-app.use("/graphql", cors(), express.json(), expressMiddleware(server));
+app.use("/", cors(), express.json(), expressMiddleware(server));
 app.use(
   cors({
     origin: "*",

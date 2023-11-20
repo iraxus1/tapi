@@ -21,12 +21,12 @@ export const getCourse = (id) => {
     id: id,
     name: faker.lorem.words(3),
     description: faker.lorem.sentence(),
-    startDate: faker.date.between(DEFAULT_FROM_DATE, DEFAULT_TO_DATE),
-    endDate: faker.date.between(DEFAULT_FROM_DATE, DEFAULT_TO_DATE),
+    startDate: faker.date.between({DEFAULT_FROM_DATE, DEFAULT_TO_DATE}),
+    endDate: faker.date.between({DEFAULT_FROM_DATE, DEFAULT_TO_DATE}),
   };
 };
 
-export const getLecturer = (id) => {
+export const getLecture = (id) => {
   faker.seed(Number(id));
   return {
     id: id,
